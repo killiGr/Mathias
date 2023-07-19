@@ -20,31 +20,23 @@ if bou_app=='Récupération de données': # ------------------------------------
                 file_paths.append(os.path.join(root, file))
         return file_paths
 
-    def main():
-        st.write("## Application de récupération des chemins de fichiers")
+    st.write("## Récupération des chemins de fichiers")
 
-        # Demande à l'utilisateur de saisir le début du chemin
-        start_path = st.text_input("Entrez le début du chemin:", "...")
+    # Demande à l'utilisateur de saisir le début du chemin
+    start_path = st.text_input("Entrez le début du chemin:", "...")
 
-        # Vérifie si le chemin est valide
-        if not os.path.exists(start_path):
-            st.error("Le chemin spécifié n'existe pas.")
-            return
-
-        # Bouton pour récupérer les chemins des fichiers
-        if st.checkbox("Récupérer les chemins"):
-            file_paths = get_file_paths(start_path)
-            st.success(f"Nombre total de fichiers trouvés: {len(file_paths)}")
-            st.write("Tableau des chemins :")
-            df = pd.DataFrame(file_paths, columns=['Chemins'])
-            df = df['Chemins'].apply(lambda x: pd.Series(x.split('\\')))
-            # Renommer les colonnes avec des numéros
-            df.columns = range(1, len(df.columns)+1)
-            st.write(df)
-            if st.button("Télécharger le fichier CSV"):
-                df.to_csv(r'C:\Users\kyllian.gressier\OneDrive - EKIUM\Bureau'+'\Output_'+start_path.replace(':','_').replace('\\','_')+'.csv' ,sep=';' ,index=False)
-
-    main()
+    # Bouton pour récupérer les chemins des fichiers
+    if st.checkbox("Récupérer les chemins"):
+        file_paths = get_file_paths(start_path)
+        st.success(f"Nombre total de fichiers trouvés: {len(file_paths)}")
+        st.write("Tableau des chemins :")
+        df = pd.DataFrame(file_paths, columns=['Chemins'])
+        df = df['Chemins'].apply(lambda x: pd.Series(x.split('\\')))
+        # Renommer les colonnes avec des numéros
+        df.columns = range(1, len(df.columns)+1)
+        st.write(df)
+        if st.button("Télécharger le fichier CSV"):
+            df.to_csv(r'C:\Users\kyllian.gressier\OneDrive - EKIUM\Bureau'+'\Output_'+start_path.replace(':','_').replace('\\','_')+'.csv' ,sep=';' ,index=False)
         
 
 if bou_app=='Traitement': # -------------------------------------------------------------------------------------------------------
