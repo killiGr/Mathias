@@ -44,8 +44,7 @@ if bou_app=='Récupération de données': # ------------------------------------
             if st.button("Télécharger le fichier CSV"):
                 df.to_csv(r'C:\Users\kyllian.gressier\OneDrive - EKIUM\Bureau'+'\Output_'+start_path.replace(':','_').replace('\\','_')+'.csv' ,sep=';' ,index=False)
 
-    if __name__ == "__main__":
-        main()
+    main()
         
 
 if bou_app=='Traitement': # -------------------------------------------------------------------------------------------------------
