@@ -62,6 +62,10 @@ if bou_app=='Traitement': # ----------------------------------------------------
         if result_4fichier:
             st.write('Noms des 4 fichiers conforme')
 
+        # Créer la liste des elements à verifier (si manquant ne pas verifier)
+        fichiers_traiter = list(set(list_).intersection(verif3))
+        return fichiers_traiter
+
     def fichier_LFD():
         # Traitement col 4 : LFD :
         st.write('### Fichier LFD :')
@@ -132,9 +136,18 @@ if bou_app=='Traitement': # ----------------------------------------------------
             batiment = list_[3]
             
             
-        premiers_fichiers()
-        fichier_LFD()
-        fichier_Photos()
+        fichier_traiter=premiers_fichiers()
+        
+        if 'LFD' in fichier_traiter:
+            fichier_LFD()
+        if 'SourcesDiv' in fichier_traiter:    
+            st.write('### Fichier SourcesDiv :')
+            st.write('Traitement SoucesDiv en developpement')
+        if 'Photos' in fichier_traiter:
+            fichier_Photos()
+        if 'Documents' in fichier_traiter:
+            st.write('### Fichier Documents :')
+            st.write('Traitement Documents en developpement')
 
 
 
