@@ -96,7 +96,7 @@ if bou_app=='Traitement': # ----------------------------------------------------
     # Fonctions : _________________________________________________________________
 
     def ligne():
-        st.image(P.Image.open(r'C:\Users\kyllian.gressier\OneDrive - EKIUM\Bureau\doc EKIUM\Demandes autres\Da-6-Mathias-arborescence-noms-fichiers\photo_2.png'))
+        st.image(P.Image.open('photo_2.png'))
     
     
     def premiers_fichiers():
