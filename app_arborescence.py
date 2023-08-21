@@ -15,7 +15,7 @@ if bou_app=='Acceuil': # -------------------------------------------------------
     st.write('### Explication des différentes fonctions :')
     st.markdown(
 
-"""**- premiers_fichiers() :** Cette fonction effectue une vérification sur les noms des 4 premier fichiers. Elle s'assure que certains éléments, tels que 'LFD', 'SourcesDiv', 'Photos', 'Documents', sont présents exactement une fois et qu'il n'y a pas d'éléments en trop. Elle renvoie une liste des fichiers à traiter par la suite.
+"""**- premiers_fichiers() :** Cette fonction effectue une vérification sur les noms des 4 premier fichiers. Elle s'assure que certains éléments, tels que 'LFD', 'SourcesDiv', 'Photos', 'Documents', sont présents exactement une fois et qu'il n'y a pas d'éléments en trop. Elle renvoie une liste des fichiers à traiter par la suite. Chaque fichier, si il est présent, déclanchera l'execution de la fonction associée. Ces fonctions vous sont présentées dans la suite du document.
 
 **- fichier_LFD() :** Cette fonction effectue une vérification sur le fichier LFD.
 
