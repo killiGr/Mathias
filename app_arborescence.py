@@ -6,7 +6,7 @@ import re
 import PIL as P
 
 st.sidebar.title('Choix de l\'outil')
-bou_app=st.sidebar.radio("", ('Acceuil','Récupération de données','Traitement'))
+bou_app=st.sidebar.radio("", ('Acceuil','Traitement'))
 
 if bou_app=='Acceuil': # ----------------------------------------------------------------------------------------------------------
     
@@ -61,32 +61,6 @@ Si la vérification initiale échoue (le nombre d'éléments uniques n'est pas �
 **- fichier_SourcesDiv() :** Cette fonction traite les fichiers correspondant à 'SourcesDiv'. Elle vérifie la présence d'éléments spécifiques dans les fichiers, tels que 'FormatJPG_color', 'FormatNeutreE57', etc. Elle signale les éléments manquants et les noms de fichiers non conformes."""
         
 )
-    
-if bou_app=='Récupération de données': # ------------------------------------------------------------------------------------------
-    def get_file_paths(start_path):
-        file_paths = []
-        for root, dirs, files in os.walk(start_path):
-            for file in files:
-                file_paths.append(os.path.join(root, file))
-        return file_paths
-
-    st.write("## Récupération des chemins de fichiers")
-
-    # Demande à l'utilisateur de saisir le début du chemin
-    start_path = st.text_input("Entrez le début du chemin:", "...")
-
-    # Bouton pour récupérer les chemins des fichiers
-    if st.checkbox("Récupérer les chemins"):
-        file_paths = get_file_paths(start_path)
-        st.success(f"Nombre total de fichiers trouvés: {len(file_paths)}")
-        st.write("Tableau des chemins :")
-        df = pd.DataFrame(file_paths, columns=['Chemins'])
-        df = df['Chemins'].apply(lambda x: pd.Series(x.split('\\')))
-        # Renommer les colonnes avec des numéros
-        df.columns = range(1, len(df.columns)+1)
-        st.write(df)
-        if st.button("Télécharger le fichier CSV"):
-            df.to_csv(r'C:\Users\kyllian.gressier\OneDrive - EKIUM\Bureau'+'\Output_'+start_path.replace(':','_').replace('\\','_')+'.csv' ,sep=';' ,index=False)
         
 
 if bou_app=='Traitement': # -------------------------------------------------------------------------------------------------------
