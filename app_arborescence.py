@@ -56,7 +56,17 @@ Si tous les fichiers dans list_ satisfont les critères ci-dessus (c'est-à-dire
 
 Si la vérification initiale échoue (le nombre d'éléments uniques n'est pas égal à 1 ou l'unique élément n'est pas "JPG"), cela signifie que le dossier "Photos" n'est pas conforme, et un message est affiché pour indiquer que le contenu du dossier ne sera pas vérifié. Une liste des éléments présents dans le dossier "Photos" est également affichée.
 
-**- fichier_Documents() :** Cette fonction traite les fichiers correspondant à 'Documents'. Elle vérifie la présence de dossiers dans les fichiers et s'assure que les fichiers 'Liste_livrable_informatique' et 'Tableau_recapitulatif' sont présents avec des noms conformes.
+**- fichier_Documents() :** Cette fonction traite les fichiers correspondant à 'Documents'. 
+
+Elle vérifie si des dossiers se trouvent dans "Documents". Si elle en trouve, elle le signale.
+
+Ensuite, elle cherche deux fichiers spécifiques, "Liste_livrable_informatique" et "Tableau_recapitulatif", dans le dossier "Documents". Si elle les trouve tous les deux, elle signale que tout est en ordre.
+
+Si elle ne trouve qu'un seul de ces fichiers, elle indique lequel manque.
+
+Si elle ne trouve aucun de ces fichiers, elle signale que les deux fichiers sont absents.
+
+En résumé, cette fonction aide à vérifier si un dossier "Documents" contient les fichiers dont nous avons besoin. Elle informe ensuite l'utilisateur si tout est correct ou si des fichiers manquent.
 
 **- fichier_SourcesDiv() :** Cette fonction traite les fichiers correspondant à 'SourcesDiv'. Elle vérifie la présence d'éléments spécifiques dans les fichiers, tels que 'FormatJPG_color', 'FormatNeutreE57', etc. Elle signale les éléments manquants et les noms de fichiers non conformes."""
         
