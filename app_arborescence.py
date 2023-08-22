@@ -74,11 +74,13 @@ Vérification de la Présence d'Éléments Attendus : La fonction vérifie si le
 
     - Formats attendus : "FormatJPG_color", "FormatNeutreE57", "FormatProprietaire",
     "FormatRealworks", "FormatRMX", "ZFC", "FormatMySurvey".
-    - Si des éléments manquent ou s'il y a des éléments en trop, un avertissement est affiché.
+    - Si des éléments manquent ou s'il y a des éléments en trop, un avertissement 
+    est affiché.
     
 Vérification du Format "FormatJPG_color" : Pour ce format, les fichiers doivent respecter les critères suivants :
 
-    - Commencer par "palier + site + tranche + batiment" suivi de "_" et terminer par ".jpg."
+    - Commencer par "palier + site + tranche + batiment" suivi de "_" et terminer par
+    ".jpg."
     - Les fichiers mal nommés sont signalés.
     
 Vérification du Format "FormatNeutreE57" : Pour ce format, les fichiers doivent avoir l'extension ".e57."
