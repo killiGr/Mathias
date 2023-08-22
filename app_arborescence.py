@@ -325,6 +325,7 @@ if bou_app=='Aléa_Arthur': # --------------------------------------------------
             if aléa not in list_:
                 list_.append(aléa)
                 x-=1
+        st.write('#### Cliquer sur le premier élément, ctrl+alt+flèche du bas, ctrl+c')
         st.write(pd.DataFrame(list_))
 
 
