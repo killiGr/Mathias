@@ -6,7 +6,7 @@ import re
 import PIL as P
 
 st.sidebar.title('Choix de l\'outil')
-bou_app=st.sidebar.radio("", ('Acceuil','Traitement'))
+bou_app=st.sidebar.radio("", ('Acceuil','Traitement','Aléa_Arthur'))
 
 if bou_app=='Acceuil': # ----------------------------------------------------------------------------------------------------------
     
@@ -288,7 +288,24 @@ if bou_app=='Traitement': # ----------------------------------------------------
             ligne()
 
 
-
+if bou_app=='Aléa_Arthur': # -------------------------------------------------------------------------------------------------------
+    import random
+    st.write('## Génère un échantillon aléatoire')
+#    list_=st.text_area('copier la colonne à traiter :')
+#    list_=list(pd.Series(list_.split('\n')).drop_duplicates()) # crée la liste d'élements
+    number=st.number_input('Taille des données :',step=1)
+    x=st.slider('Choisir le % de l\'échantillon :', 0, 100, 15)
+    x=round(number*x/100,0)
+    st.write('échantillon : ',x)
+    button=st.checkbox('générer')
+    if button:
+        list_ = []
+        while x != 0:
+            aléa=random.randint(1,number)
+            if aléa not in list_:
+                list_.append(aléa)
+                x-=1
+        st.write(list_)
 
 
 
