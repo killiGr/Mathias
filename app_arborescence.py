@@ -310,12 +310,13 @@ if bou_app=='Traitement': # ----------------------------------------------------
 
 if bou_app=='Aléa_Arthur': # -------------------------------------------------------------------------------------------------------
     import random
+    import math
     st.write('## Génère un échantillon aléatoire')
 #    list_=st.text_area('copier la colonne à traiter :')
 #    list_=list(pd.Series(list_.split('\n')).drop_duplicates()) # crée la liste d'élements
     number=st.number_input('Taille des données :',step=1)
     x=st.slider('Choisir le % de l\'échantillon :', 0, 100, 15)
-    x=round(number*x/100,0)
+    x=math.ceil(number*x/100,0)
     st.write('échantillon : ',x)
     button=st.checkbox('générer')
     if button:
