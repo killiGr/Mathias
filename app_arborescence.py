@@ -68,8 +68,26 @@ Si elle ne trouve aucun de ces fichiers, elle signale que les deux fichiers sont
 
 En résumé, cette fonction aide à vérifier si un dossier "Documents" contient les fichiers dont nous avons besoin. Elle informe ensuite l'utilisateur si tout est correct ou si des fichiers manquent.
 
-**- fichier_SourcesDiv() :** Cette fonction traite les fichiers correspondant à 'SourcesDiv'. Elle vérifie la présence d'éléments spécifiques dans les fichiers, tels que 'FormatJPG_color', 'FormatNeutreE57', etc. Elle signale les éléments manquants et les noms de fichiers non conformes."""
-        
+**- fichier_SourcesDiv() :** Cette fonction traite les fichiers correspondant à 'SourcesDiv'. 
+
+Vérification de la Présence d'Éléments Attendus : La fonction vérifie si les éléments suivants sont présents dans le dossier "SourcesDiv" comme attendu :
+
+    - Formats attendus : "FormatJPG_color", "FormatNeutreE57", "FormatProprietaire",
+    "FormatRealworks", "FormatRMX", "ZFC", "FormatMySurvey".
+    - Si des éléments manquent ou s'il y a des éléments en trop, un avertissement est affiché.
+    
+Vérification du Format "FormatJPG_color" : Pour ce format, les fichiers doivent respecter les critères suivants :
+
+    - Commencer par "palier + site + tranche + batiment" suivi de "_" et terminer par ".jpg."
+    - Les fichiers mal nommés sont signalés.
+    
+Vérification du Format "FormatNeutreE57" : Pour ce format, les fichiers doivent avoir l'extension ".e57."
+
+    - Les fichiers mal nommés sont signalés.
+    
+Format "FormatProprietaire" (en développement) : Un message indique que ce format est en cours de développement et n'est pas encore vérifié.
+
+"""     
 )
         
 
