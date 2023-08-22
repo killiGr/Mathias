@@ -316,7 +316,7 @@ if bou_app=='Aléa_Arthur': # --------------------------------------------------
 #    list_=list(pd.Series(list_.split('\n')).drop_duplicates()) # crée la liste d'élements
     number=st.number_input('Taille des données :',step=1)
     x=st.slider('Choisir le % de l\'échantillon :', 0, 100, 15)
-    x=math.ceil(number*x/100,0)
+    x=math.ceil(number*x/100)
     st.write('échantillon : ',x)
     button=st.checkbox('générer')
     if button:
