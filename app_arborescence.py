@@ -8,6 +8,19 @@ import PIL as P
 st.sidebar.title('Choix de l\'outil')
 bou_app=st.sidebar.radio("", ('Acceuil','Traitement','Aléa_Arthur'))
 
+exe_file_path = 'récupération de données.exe'
+
+# Bouton de téléchargement
+if bou_app == 'Télécharger l\'app "génération de données"':
+    st.write('## Télécharger l\'application pour générer les fichiers à traiter :')
+    with open(exe_file_path, 'rb') as f:
+        st.download_button(
+            label="Download",
+            data=f,
+            key='exe_download',
+            file_name='récupération de données.exe'
+        )
+
 if bou_app=='Acceuil': # ----------------------------------------------------------------------------------------------------------
     
     st.write('# Application Hiérarchie de dossier')
